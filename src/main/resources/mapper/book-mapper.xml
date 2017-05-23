@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >  
+<mapper namespace="com.jk.dao.BookDao">
+
+
+
+    <!-- parameterType === parameterClass
+        resultType === resultClass
+        #{} === ##
+        ${} === $$
+     -->
+   <insert id="insertbook" parameterType="book">
+        INSERT INTO t_books
+        (t_id, t_name)
+        VALUES
+        (t_books_seq.nextval, #{bookname})
+   </insert>
+   <select id="selectlistbook" resultType="book">
+     select
+    t_id as "bookid",
+     t_name as "bookname"
+    from t_books order by t_id
+   </select>
+    <delete id="removebook" parameterType="book">
+      DELETE  FROM  t_books where t_id=#{bookid}
+
+    </delete>
+
+
+</mapper>   
