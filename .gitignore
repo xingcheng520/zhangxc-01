@@ -1,0 +1,7 @@
+#去掉这么提交文件
+.gitignore/*
+.idea/*
+build/*
+gradle-parent-01/*
+out/*
+ssm-gradle-01.iml
